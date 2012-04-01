@@ -46,7 +46,7 @@ chrome.tabs.onActivated.addListener(function(obj)
 
 		if (less_sheets.url == tab.url)
 		{
-			activatePopup(less_sheets.styles.length);
+			activatePopup(less_sheets.styles.length, tab.id);
 		}
 		else
 		{
