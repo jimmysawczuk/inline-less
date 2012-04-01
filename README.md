@@ -51,6 +51,6 @@ This code uses code from the [jQuery][jquery], [Formalize][formalize] and [LessC
 
 
  [lesscss]: http://www.lesscss.org
- [download-link]: https://github.com/downloads/jimmysawczuk/inline-less/latest.crx
+ [download-link]: https://github.com/jimmysawczuk/inline-less/downloads
  [jquery]: http://jquery.com
  [formalize]: http://formalize.me
