@@ -65,6 +65,6 @@ function activatePopup(num)
 function deactivatePopup()
 {
 	chrome.browserAction.setBadgeBackgroundColor({color: [195, 0, 0, 255]});
-	chrome.browserAction.setBadgeText({text: " "});
+	chrome.browserAction.setBadgeText({text: ""});
 	chrome.browserAction.setPopup({popup: ""});
 }
