@@ -4,7 +4,7 @@ $('style').each(function(idx, val)
 {
 	if ($(val).attr('type') == 'text/less')
 	{
-		var id = 'less-stylesheet-' + (less_sheets.length + 1);
+		var id = $(val).attr('id')? $(val).attr('id') : 'less-stylesheet-' + (less_sheets.length + 1);
 
 		less_sheets.push({'id': id, 'less': $(val).text()});
 
@@ -16,20 +16,20 @@ if (less_sheets.length > 0)
 {
 	chrome.extension.sendRequest(less_sheets, function(response) 
 	{
-  		$(response).each(function(idx, val)
-  		{
-  			if (typeof val.css !== "undefined")
-  			{
-  				$('#' + val.id).after($('<style />')
+		$(response).each(function(idx, val)
+		{
+			if (typeof val.css !== "undefined")
+			{
+				$('#' + val.id).after($('<style />')
 					.text(val.css)
-	  				.attr({'type': "text/css", 'data-less-stylesheet-id': val.id})
+					.attr({'type': "text/css", 'data-less-stylesheet-id': val.id})
 				);	
-  			}
-  			else
-  			{
-  				console.error(val.error);
-  			}
-  			
-  		});
-	});
+			}
+			else
+			{
+				console.error(val.error);
+			}
+			
+		});
+	});	
 }

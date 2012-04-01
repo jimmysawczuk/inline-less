@@ -1,0 +1,71 @@
+@import "formalize/reset.css";
+@import "formalize/text.css";
+@import "formalize/formalize.css";
+
+html {
+	height: auto;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 400px;
+
+	h1 {
+		border-bottom: 1px solid #555;
+		margin: 10px 10px 0.25em;
+		font-size: 24px;
+	}
+
+	#container {
+		margin: 10px;
+	}
+
+	.style_block {
+		overflow: hidden;
+		margin-bottom: 5px;
+
+		&.even { 
+			background-color: #eee;
+
+			textarea {
+				background-color: #eee;
+			}
+		}
+		&.odd {
+			background-color: #fefefe;
+
+			textarea {
+				background-color: #fefefe;
+			}
+		}
+
+		.preview {
+			clear: both;
+
+			textarea {
+				height: 75px;
+				overflow-x: hidden;
+				overflow-y: scroll;	
+				border-width: 0px;
+				resize: none;
+				font-size: 11px;
+				font-family: monospace;
+			}
+		}
+
+		h2 {
+			font-size: 18px;
+			border-bottom: 1px dashed #aaa;
+			overflow: hidden;
+			margin: 0px;
+
+			.copy {
+				float: right;
+				vertical-align: middle;
+			}
+		}
+
+		
+	}
+}
