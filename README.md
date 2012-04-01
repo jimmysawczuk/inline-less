@@ -8,13 +8,15 @@
 
 2. Use LESS inline, like so, taking care to set the `type` attribute correctly:
 
-      <style type="text/less">
-          h1 {
-              &.header { color: red; }
-          }
+    ```
+    <style type="text/less">
+        h1 {
+            &.header { color: red; }
+        }
  
-          // and more...
-      </style>
+        // and more...
+    </style>
+    ```
 
 3. Watch as your LESS stylesheets are rendered!
 
