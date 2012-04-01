@@ -67,7 +67,7 @@ This code uses code from the [jQuery][jquery], [Formalize][formalize] and [LessC
 
 
  [lesscss]: http://www.lesscss.org
- [download-link]: http://jimmysawczuk.github.com/inline-less/bin/v0.6.0.crx
+ [download-link]: http://jimmysawczuk.github.com/inline-less/bin/v0.7.0.crx
  [jquery]: http://jquery.com
  [formalize]: http://formalize.me
  [extensions]: chrome://extensions
