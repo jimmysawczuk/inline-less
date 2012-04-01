@@ -8,7 +8,10 @@
 
 2. Use LESS inline, like so, taking care to set the `type` attribute correctly:
 
-    ```
+    ```html
+    <html>
+    <head>
+    <title>My cool page</title>
     <style type="text/less">
         h1 {
             &.header { color: red; }
@@ -16,6 +19,19 @@
  
         // and more...
     </style>
+    
+    <!-- put IDs on your style tags for easy reference later on -->
+    <style type="text/less" id="named-sheet">
+    	p {
+            font-size: 13px;
+            
+            em {
+                font-style: italic;
+            }
+    	}
+    </style>
+    </head>
+    <!-- and more... -->
     ```
 
 3. Watch as your LESS stylesheets are rendered!
