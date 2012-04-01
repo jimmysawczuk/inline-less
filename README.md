@@ -4,7 +4,7 @@
 
 ## Usage
 
-1. Install the Chrome extension by [downloading and opening the latest CRX build][download-link].
+1. Install the Chrome extension by [downloading and opening the latest CRX build][download-link]. (If you're having problems on local pages, make sure "Allow access to file URLs" is checked in your [extensions settings][extensions].)
 
 2. Use LESS inline, like so, taking care to set the `type` attribute correctly:
 
@@ -54,3 +54,4 @@ This code uses code from the [jQuery][jquery], [Formalize][formalize] and [LessC
  [download-link]: https://github.com/jimmysawczuk/inline-less/downloads
  [jquery]: http://jquery.com
  [formalize]: http://formalize.me
+ [extensions]: chrome://extensions
