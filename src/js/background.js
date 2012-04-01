@@ -29,7 +29,7 @@ chrome.extension.onRequest.addListener(
 
 		if (cnt > 0)
 		{
-			activatePopup(payload.styles.length);
+			activatePopup(payload.styles);
 		}
 
 		localStorage["inline-less-output"] = JSON.stringify(payload);
@@ -46,7 +46,7 @@ chrome.tabs.onActivated.addListener(function(obj)
 
 		if (less_sheets.url == tab.url)
 		{
-			activatePopup(less_sheets.styles.length, tab.id);
+			activatePopup(less_sheets.styles);
 		}
 		else
 		{
@@ -55,10 +55,50 @@ chrome.tabs.onActivated.addListener(function(obj)
 	});
 });
 
-function activatePopup(num)
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab)
+{	
+	if (changeInfo.status == "complete")
+	{
+		var less_sheets = JSON.parse(localStorage["inline-less-output"]);
+
+		if (less_sheets.url == tab.url)
+		{
+			activatePopup(less_sheets.styles);
+		}
+		else
+		{
+			deactivatePopup();
+		}
+	}
+});
+
+function activatePopup(styles)
 {
-	chrome.browserAction.setBadgeBackgroundColor({color: [0, 195, 0, 255]});
-	chrome.browserAction.setBadgeText({text: "" + num});
+	var valid = 0, errors = 0;
+
+	for (var i in styles)
+	{
+		if (typeof styles[i].css !== "undefined")
+		{
+			valid++;
+		}
+		else if (typeof styles[i].error !== "undefined")
+		{
+			errors++;
+		}
+	}
+
+	if (errors == 0)
+	{
+		chrome.browserAction.setBadgeBackgroundColor({color: [0, 195, 0, 255]});
+	}
+	else
+	{
+		chrome.browserAction.setBadgeBackgroundColor({color: [255, 195, 0, 255]});
+	}
+
+	
+	chrome.browserAction.setBadgeText({text: "" + (valid + errors)});
 	chrome.browserAction.setPopup({popup: "popup.html"});
 }
 
