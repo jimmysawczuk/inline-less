@@ -1,5 +1,6 @@
 chrome.extension.onRequest.addListener(
-	function(request, sender, sendResponse) {
+	function(request, sender, sendResponse)
+	{
 		var parser = new(less.Parser);
 
 		var cnt = 0;
@@ -31,6 +32,10 @@ chrome.extension.onRequest.addListener(
 		{
 			activatePopup(payload.styles);
 		}
+		else
+		{
+			deactivatePopup();
+		}
 
 		localStorage["inline-less-output"] = JSON.stringify(payload);
 
@@ -44,7 +49,7 @@ chrome.tabs.onActivated.addListener(function(obj)
 	{
 		var less_sheets = JSON.parse(localStorage["inline-less-output"]);
 
-		if (less_sheets.url == tab.url)
+		if (less_sheets.url == tab.url && less_sheets.styles.length > 0)
 		{
 			activatePopup(less_sheets.styles);
 		}
@@ -61,7 +66,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab)
 	{
 		var less_sheets = JSON.parse(localStorage["inline-less-output"]);
 
-		if (less_sheets.url == tab.url)
+		if (less_sheets.url == tab.url && less_sheets.styles.length > 0)
 		{
 			activatePopup(less_sheets.styles);
 		}

@@ -12,24 +12,21 @@ $('style').each(function(idx, val)
 	}
 });
 
-if (less_sheets.length > 0)
+chrome.extension.sendRequest(less_sheets, function(response) 
 {
-	chrome.extension.sendRequest(less_sheets, function(response) 
+	$(response).each(function(idx, val)
 	{
-		$(response).each(function(idx, val)
+		if (typeof val.css !== "undefined")
 		{
-			if (typeof val.css !== "undefined")
-			{
-				$('#' + val.id).after($('<style />')
-					.text(val.css)
-					.attr({'type': "text/css", 'data-less-stylesheet-id': val.id})
-				);	
-			}
-			else
-			{
-				console.error(val.error);
-			}
-			
-		});
-	});	
-}
+			$('#' + val.id).after($('<style />')
+				.text(val.css)
+				.attr({'type': "text/css", 'data-less-stylesheet-id': val.id})
+			);	
+		}
+		else
+		{
+			console.error(val.error);
+		}
+		
+	});
+});

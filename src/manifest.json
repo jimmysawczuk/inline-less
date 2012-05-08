@@ -1,6 +1,6 @@
 {
 	"name": "Inline LESS",
-	"version": "0.7.0",
+	"version": "0.7.1",
 	"description": "Parses inline LESS (in style tags in your HTML) and renders them and readies them for copying.",
 	"update_url": "http://jimmysawczuk.github.com/inline-less/updates.xml",
 	"background": {
