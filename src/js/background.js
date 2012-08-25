@@ -16,7 +16,7 @@ chrome.extension.onRequest.addListener(
 				}
 				else
 				{
-					request[idx].css = css.toCSS({compress: true});
+					request[idx].css = css.toCSS({compress: false});
 					cnt++;
 				}
 				

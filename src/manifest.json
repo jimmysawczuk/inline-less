@@ -1,6 +1,7 @@
 {
 	"name": "Inline LESS",
-	"version": "0.7.1",
+	"version": "0.8.0",
+	"manifest_version": 2,
 	"description": "Parses inline LESS (in style tags in your HTML) and renders them and readies them for copying.",
 	"update_url": "http://jimmysawczuk.github.com/inline-less/updates.xml",
 	"background": {
@@ -26,5 +27,5 @@
     	"default_icon": "images/curly-128x128.png",
     	"default_title": "Inline LESS"
 	},
-	"minimum_chrome_version": "13.0.0"
+	"minimum_chrome_version": "18.0.0"
 }
