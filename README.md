@@ -40,6 +40,16 @@
 
 5. Done!
 
+## Installing the extension
+
+Just rencently, Chrome changed their policy to not install .crx files from websites by default. You can still install the file by following these instructions:
+
+> 1. Download the extension file from the website and save it to your computer.
+> 2. Click the wrench icon on the browser toolbar.
+> 3. Select **Tools > Extensions**.
+> 4. Locate the extension file on your computer and drag the file onto the Extensions page.
+> 5. Review the list of permissions in the dialog that appears. If you would like to proceed, click Install.
+
 ## License
 
 This code uses code from the [jQuery][jquery], [Formalize][formalize] and [LessCSS][lesscss] projects under their respective licenses. This extension is released under the following license:
