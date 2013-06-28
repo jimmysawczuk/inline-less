@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Inline-less by jimmysawczuk</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Inline-less</h1>
+        <h2>Chrome extension to render LESS that's in &lt;style&gt; tags</h2>
+        <a href="https://github.com/jimmysawczuk/inline-less" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="inline-less" class="anchor" href="#inline-less"><span class="octicon octicon-link"></span></a>inline-less</h1>
+
+<p><strong>inline-less</strong> is a Chrome extension designed to help developers who want to use <a href="http://www.lesscss.org">LESS</a> instead of CSS for some quick styling, but want to avoid the headache of including the library or having to worry about compilation.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li><p>Install the Chrome extension by <a href="https://chrome.google.com/webstore/detail/inline-less/gphilobijbhnjbeohenlbjccgjhdpodp">downloading and opening the latest CRX build</a>. (If you're having problems on local pages, make sure "Allow access to file URLs" is checked in your extensions settings, i.e. <code>chrome://extensions</code>.)</p></li>
+<li>
+<p>Use LESS inline, like so, taking care to set the <code>type</code> attribute correctly:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;title&gt;</span>My cool page<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/less"</span><span class="nt">&gt;</span>
+    <span class="nt">h1</span> <span class="p">{</span>
+        <span class="o">&amp;.</span><span class="n">header</span> <span class="err">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+    <span class="err">}</span>
+
+    <span class="o">//</span> <span class="nt">and</span> <span class="nt">more</span><span class="o">...</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- put IDs on your style tags for easy reference later on --&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/less"</span> <span class="na">id=</span><span class="s">"named-sheet"</span><span class="nt">&gt;</span>
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="k">font-size</span><span class="o">:</span> <span class="m">13px</span><span class="p">;</span>
+
+        <span class="n">em</span> <span class="err">{</span>
+            <span class="k">font-style</span><span class="o">:</span> <span class="k">italic</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="err">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="c">&lt;!-- and more... --&gt;</span>
+</pre></div>
+</li>
+<li><p>Watch as your LESS stylesheets are rendered!</p></li>
+<li><p>When you're ready to ship your code, click the extension icon for copy-and-paste-ready CSS code.</p></li>
+<li><p>Done!</p></li>
+</ol><h2>
+<a name="installing-the-unpacked-extension" class="anchor" href="#installing-the-unpacked-extension"><span class="octicon octicon-link"></span></a>Installing the unpacked extension</h2>
+
+<ol>
+<li>
+<p>Clone this repository:</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/jimmysawczuk/inline-less.git
+</pre></div>
+</li>
+<li><p>Open <code>chrome://extensions</code>.</p></li>
+<li><p>Check the "Developer Mode" checkbox.</p></li>
+<li><p>Click the "Load unpacked extension..." button and navigate to the <code>src/</code> subdirectory of the repsitory you just cloned.</p></li>
+</ol><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>This code uses code from the <a href="http://jquery.com">jQuery</a>, <a href="http://formalize.me">Formalize</a> and <a href="http://www.lesscss.org">LessCSS</a> projects under their respective licenses. This extension is released under the following license:</p>
+
+<pre><code>The MIT License (MIT)
+Copyright (C) 2012-2013 by Jimmy Sawczuk
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/jimmysawczuk/inline-less/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/jimmysawczuk/inline-less/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/jimmysawczuk/inline-less"></a> is maintained by <a href="https://github.com/jimmysawczuk">jimmysawczuk</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
