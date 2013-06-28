@@ -16,15 +16,15 @@
         h1 {
             &.header { color: red; }
         }
- 
+
         // and more...
     </style>
-    
+
     <!-- put IDs on your style tags for easy reference later on -->
     <style type="text/less" id="named-sheet">
     	p {
             font-size: 13px;
-            
+
             em {
                 font-style: italic;
             }
@@ -40,22 +40,24 @@
 
 5. Done!
 
-## Installing the extension
+## Installing the unpacked extension
 
-Just rencently, Chrome changed their policy to not install .crx files from websites by default. You can still install the file by following these instructions:
+1. Clone this repository:
 
-> 1. Download the extension file from the website and save it to your computer.
-> 2. Click the wrench icon on the browser toolbar.
-> 3. Select **Tools > Extensions**.
-> 4. Locate the extension file on your computer and drag the file onto the Extensions page.
-> 5. Review the list of permissions in the dialog that appears. If you would like to proceed, click Install.
+    ```bash
+    $ git clone https://github.com/jimmysawczuk/inline-less.git
+    ```
+
+2. Open `chrome://extensions`.
+3. Check the "Developer Mode" checkbox.
+4. Click the "Load unpacked extension..." button and navigate to the `src/` subdirectory of the repsitory you just cloned.
 
 ## License
 
 This code uses code from the [jQuery][jquery], [Formalize][formalize] and [LessCSS][lesscss] projects under their respective licenses. This extension is released under the following license:
 
 	The MIT License (MIT)
-	Copyright (C) 2012 by Jimmy Sawczuk
+	Copyright (C) 2012-2013 by Jimmy Sawczuk
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -77,7 +79,7 @@ This code uses code from the [jQuery][jquery], [Formalize][formalize] and [LessC
 
 
  [lesscss]: http://www.lesscss.org
- [download-link]: http://jimmysawczuk.github.com/inline-less/bin/v0.8.0.crx
+ [download-link]: https://chrome.google.com/webstore/detail/inline-less/gphilobijbhnjbeohenlbjccgjhdpodp
  [jquery]: http://jquery.com
  [formalize]: http://formalize.me
  [extensions]: chrome://extensions
