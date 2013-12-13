@@ -4,7 +4,7 @@
 
 ## Usage
 
-1. Install the Chrome extension by [downloading and opening the latest CRX build][download-link]. (If you're having problems on local pages, make sure "Allow access to file URLs" is checked in your extensions settings, i.e. `chrome://extensions`.)
+1. Install the Chrome extension by [downloading it from the extension gallery][download-link]. (If you're having problems on local pages, make sure "Allow access to file URLs" is checked in your extensions settings, i.e. `chrome://extensions`.)
 
 2. Use LESS inline, like so, taking care to set the `type` attribute correctly:
 
